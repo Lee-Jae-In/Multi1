@@ -1,0 +1,38 @@
+{% load static %}
+
+{% include 'product/product_nav.html' %}
+<link rel="stylesheet" href="{% static 'css1/pico.min.css' %}">
+<article data-theme="light">
+    
+       
+{% for p in product_list %}
+    <article>
+        <header > 
+            <strong>
+            <hr>
+            <li >제품명 : {{p.name}}</li>
+            </strong>
+        </header>
+
+        <li>제품 분류 : {{p.category}}</li>
+        <li>제품 구분 : {{p.manu_f}}</li>
+        <li>업체명 : {{p.company}}</li>
+        {% if p.price_buy %}
+            <li>구입가격 : {{p.price_buy}}</li>
+        {% else %}
+            <li>구입가격 : 업체문의</li>
+        {% endif %}
+        {% if p.price_borrow %}
+            <li>대여가격 : {{p.price_borrow}}</li>
+        {% else %}
+            <li>구입가격 : 업체문의</li>
+            <footer>
+            {% endif %}
+                <a href="{{p.url_go}}"><li>홈페이지 가기</li></a>
+            </footer>
+    </article>
+    
+        
+    
+{% endfor %}
+</article>
