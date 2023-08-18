@@ -1,14 +1,21 @@
 {% include 'first/base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 {% if request.user == person %}
-    {% with user_followers=person.followers.all %}
-        {% for list in user_list %}
-            {% if list in user_followers %}
+    {% with user_followers=post.followings.all %}
+        {% for list in user_followers %}            
+                <hr>
                 {{list.username}}님 프로필</a>
                 <p>성명 : {{list.username}}</p>
                 <p>나이 : {{list.old}}</p>
                 <p>전화번호 : {{list.phone}}</p>
                 <p>거주지 : {{list.address}}</p>
-            {% endif %}
+                <hr>
         {% endfor %}
     {% endwith %}
 {% endif %}
+</body>

@@ -16,7 +16,6 @@
         <link href="{% static 'https://fonts.googleapis.com/css?family=Montserrat:400,700' %}" rel="stylesheet" type="text/css" />
         <link href="{% static 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' %}" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 
 
     </head>
@@ -29,7 +28,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="{% static 'assets/img/avataaars.svg' %}" alt="..." />
+                <img class="masthead-avatar mb-5" src="{% static 'b_img/m_img.jpg' %}"  />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">동행을 시작하세요.</h1>
                 <!-- Icon Divider-->
@@ -40,21 +39,21 @@
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">
-                    <button class=class="w-btn-neon2" type="button" >
+                    <button class="w-btn-neon2" type="button" >
                         <div>
-                            <a href="post/">구인 공고 게시판</a>
+                            <a href="post/" style="text-decoration:none">구인 공고 게시판</a>
                         </div>
                     </button>
         
-                    <button class=class="w-btn-neon2" type="button" >
+                    <button class="w-btn-neon2" type="button" >
                         <div>
-                            <a href="product/center">이동 센터 정보</a>
+                            <a href="product/center" style="text-decoration:none">이동 센터 정보</a>
                         </div>
                     </button>
         
-                    <button class=class="w-btn-neon2" type="button" >
+                    <button class="w-btn-neon2" type="button" >
                         <div>
-                            <a href="product/list">우수 제품 찾아보기</a>
+                            <a href="product/list" style="text-decoration:none">우수 제품 찾아보기</a>
                         </div>
                     </button>
                 </p>
@@ -76,84 +75,6 @@
                 <div class="row">
                     <div class="col-lg-4 ms-auto"><p class="lead">동행 신청자와 자원봉사자들을 연결하여 상시 비의료적인 동행 서비스를 지원하여 서로의 행복을 도모</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">이동센터 정보 및 이동 관련 우수 제품 추천을 동한 교통약자의 자율적 이동 및 사회 참여 활성화</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="{% static 'https://startbootstrap.com/theme/freelancer/' %}">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- {% static 'https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="{% static 'https://startbootstrap.com/solution/contact-forms' %}"> https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </section>

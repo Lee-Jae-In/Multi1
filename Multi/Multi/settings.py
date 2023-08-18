@@ -74,7 +74,8 @@ TEMPLATES = [
         },
     },
 ]
-
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+TIME_INPUT_FORMATS = ['%s:%i:%H']
 WSGI_APPLICATION = 'Multi.wsgi.application'
 
 # Database
