@@ -1,23 +1,42 @@
-{% include 'first/base.html' %}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>보건 동행 - Multi</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-{% load bootstrap4 %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <button class="btn btn-primary">수정</button>
-    </form>
-    {% if request.user != user %}
-    <hr>
-    {% with user_followers=user.followers.all %}
-        {% if request.user in user_followers %}
-            <a href="{% url 'accounts:follow' user.pk %}">팔로우 취소</a>
-        {% else %}
-            <a href="{% url 'accounts:follow' user.pk %}">팔로우</a>
-        {% endif %}
-    {% endwith%}
-{% endif %}
+</head>
+<header>
+    {% include 'first/base.html' %}
+</header>
 
-    <form action="/accounts/delete/" method="POST">
-        {% csrf_token %}
-        <input type="submit" value="회원탈퇴">
-    </form>
+<body>
+
+    <main id="main">
+        <div style="margin: 15vh 0 0 0">
+            <div style="background-color:">
+                    <h3 data-aos="fade-down" class="aos-init aos-animate">{{ user.username }}님<span>  회원정보</span></h3>
+                {% load bootstrap4 %}
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <button class="btn btn-primary">수정</button>
+                    </form>
+                    {% if request.user != user %}
+                    <hr>
+                    {% with user_followers=user.followers.all %}
+                        {% if request.user in user_followers %}
+                            <a href="{% url 'accounts:follow' user.pk %}">팔로우 취소</a>
+                        {% else %}
+                            <a href="{% url 'accounts:follow' user.pk %}">팔로우</a>
+                        {% endif %}
+                    {% endwith%}
+                {% endif %}
+
+                    <form action="/accounts/delete/" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="회원탈퇴">
+                    </form>
+            </div>
+        </div>
+</body>

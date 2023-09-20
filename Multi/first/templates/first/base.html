@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 
 <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 
@@ -23,4 +23,42 @@
         </div>
     </div>
 </nav>
+ {% endcomment %}
+ {% load static %}  
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
+<!-- Vendor CSS Files -->
+<link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+<link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+<link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+<header id="header" class="header d-flex align-items-center" style="background-color:gray; opacity:0.8;">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center">
+            <h1 style="color:orange">보건 동행<span>.</span></h1>
+            {% comment %} <img src="{% static 'asset/img/b_logo.png' %}" alt> {% endcomment %}
+        </a>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <nav id="navbar" class="navbar float-right" style="color:black">
+            <ul>
+                {% if user.is_authenticated %}
+                <a class="active" style="color:skyblue">{{ user.username }} 님</a>
+                <a href="/accounts/logout/" style="color:orange">로그아웃</a></li>
+                <a href="/accounts/{{user.pk}}/update/" style="color:orange">마이페이지</a></li>
+                {% else %}
+                <a href="/accounts/login/" style="color:orange">로그인</a></li>
+                <a href="/accounts/register/" style="color:orange">회원가입</a></li>
+                {% endif %}    
+                
+            </ul>
+        </nav><!-- .navbar -->
+    </div>
+</header>
